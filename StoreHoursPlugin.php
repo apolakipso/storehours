@@ -25,4 +25,10 @@ class StoreHoursPlugin extends BasePlugin
 	{
 		return 'http://pixelandtonic.com';
 	}
+
+	public function addTwigExtension()
+	{
+		Craft::import('plugins.storehours.twigextensions.StoreHoursTwigExtension');
+		return new StoreHoursTwigExtension();
+	}
 }
