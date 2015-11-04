@@ -21,7 +21,7 @@ class StoreHoursTwigExtension extends \Twig_Extension
 	}
 
 	/**
-	* Inserts a new option into the array at position $index, containg $label, $value, $default
+	* Builds a list of readable opening hours rows
 	* FIXME: This is horribly convoluted
 	*
 	* @param array $storeHours
@@ -32,12 +32,12 @@ class StoreHoursTwigExtension extends \Twig_Extension
 		if (empty($days)) {
 			$days = [
 				'Mo' => 1,
-				'Di' => 2,
-				'Mi' => 3,
-				'Do' => 4,
+				'Tu' => 2,
+				'We' => 3,
+				'Th' => 4,
 				'Fr' => 5,
 				'Sa' => 6,
-				'So' => 0,
+				'Su' => 0,
 			];
 		}
 
@@ -50,6 +50,7 @@ class StoreHoursTwigExtension extends \Twig_Extension
 			5 => 'Fr',
 			6 => 'Sa',
 		];
+
 		$prev = null;
 		$dayLabels = [];
 		$r = [];
